@@ -37,10 +37,10 @@ galleryConteiner.insertAdjacentHTML('beforeend', items)
 
 galleryConteiner.addEventListener('click', onGalleryContainerClick)
 
-function onGalleryContainerClick(e) {
-    const imageSource = e.target.dataset.source;
-    e.preventDefault();
-    if (e.target.nodeName !== 'IMG') {
+function onGalleryContainerClick(evt) {
+    const imageSource = evt.target.dataset.source;
+    evt.preventDefault();
+    if (evt.target.nodeName !== 'IMG') {
         return;
     } else {
         const instance = basicLightbox.create(`
