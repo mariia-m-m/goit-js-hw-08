@@ -43,7 +43,7 @@ function onGalleryContainerClick(e) {
 }
 
 const renderGalleryToHTML = array => {
-  galleryConteiner.insertAdjacentHTML(`beforeend`, createItemGallery(array));
+  galleryConteiner.insertAdjacentHTML(`beforeend`, createGallery(array));
 };
 renderGalleryToHTML(galleryItems);
 const lightbox = new SimpleLightbox('.gallery a', {
