@@ -40,13 +40,13 @@ galleryConteiner.addEventListener('click', onGalleryContainerClick)
 function onGalleryContainerClick(evt) {
     const imageSource = evt.currentTarget.dataset.source;
     evt.preventDefault();
-//     if (evt.currentTarget.nodeName !== 'IMG') {
-//         return;
-//     } else {
-//         const instance = basicLightbox.create(`
-//     <img src="${imageSource}" width="800" height="600">
-// `)
-//         instance.show();
+    if (evt.currentTarget.nodeName !== 'IMG') {
+        return;
+    } else {
+        const instance = basicLightbox.create(`
+    <img src="${imageSource}" width="800" height="600">
+`)
+        instance.show();
 
-//         }
+        }
 }
