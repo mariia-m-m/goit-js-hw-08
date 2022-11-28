@@ -56,4 +56,4 @@ const lightbox = new SimpleLightbox('.gallery a', {
 //         instance.show();
 
 //         }
-}
+// }
