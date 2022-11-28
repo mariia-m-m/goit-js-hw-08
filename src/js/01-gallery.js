@@ -37,16 +37,16 @@ galleryConteiner.insertAdjacentHTML('beforeend', items)
 
 galleryConteiner.addEventListener('click', onGalleryContainerClick)
 
-// function onGalleryContainerClick(evt) {
-//     const imageSource = evt.target.dataset.source;
-//     evt.preventDefault();
-//     if (evt.target.nodeName !== 'IMG') {
-//         return;
-//     } else {
-//         const instance = basicLightbox.create(`
-//     <img src="${imageSource}" width="800" height="600">
-// `)
-//         instance.show();
+function onGalleryContainerClick(e) {
+    const imageSource = e.target.dataset.source;
+    e.preventDefault();
+    if (e.target.nodeName !== 'IMG') {
+        return;
+    } else {
+        const instance = basicLightbox.create(`
+    <img src="${imageSource}" width="800" height="600">
+`)
+        instance.show();
 
-//         }
-// }
+        }
+}
