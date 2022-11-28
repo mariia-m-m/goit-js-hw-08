@@ -37,9 +37,9 @@ galleryConteiner.insertAdjacentHTML('beforeend', items)
 
 galleryConteiner.addEventListener('click', onGalleryContainerClick)
 
-// function onGalleryContainerClick(evt) {
-//     const imageSource = evt.currentTarget.dataset.source;
-//     evt.preventDefault();
+function onGalleryContainerClick(evt) {
+    const imageSource = evt.currentTarget.dataset.source;
+    evt.preventDefault();
 //     if (evt.currentTarget.nodeName !== 'IMG') {
 //         return;
 //     } else {
@@ -49,4 +49,4 @@ galleryConteiner.addEventListener('click', onGalleryContainerClick)
 //         instance.show();
 
 //         }
-// }
+}
