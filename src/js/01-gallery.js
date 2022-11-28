@@ -2,9 +2,7 @@
 import { galleryItems } from './gallery-items';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css"
-import 'basicLightbox/dist/basicLightbox.min.css'
-const basicLightbox = require('basiclightbox')
-import * as basicLightbox from 'basiclightbox'
+
 // Change code below this line
 
 const galleryConteiner = document.querySelector('div.gallery');
@@ -35,18 +33,27 @@ galleryConteiner.insertAdjacentHTML('beforeend', items)
 
 // №2
 
-galleryConteiner.addEventListener('click', onGalleryContainerClick)
+const renderGalleryToHTML = array => {
+  galleryConteiner.insertAdjacentHTML(`beforeend`, createItemGallery(array));
+};
+renderGalleryToHTML(galleryItems);
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionData: 'alt',
+  captionDelay: 250,
+});
 
-function onGalleryContainerClick(e) {
-    const imageSource = e.target.dataset.source;
-    e.preventDefault();
-    if (e.target.nodeName !== 'IMG') {
-        return;
-    } else {
-        const instance = basicLightbox.create(`
-    <img src="${imageSource}" width="800" height="600">
-`)
-        instance.show();
+// galleryConteiner.addEventListener('click', onGalleryContainerClick)
 
-        }
+// function onGalleryContainerClick(e) {
+//     const imageSource = e.target.dataset.source;
+//     e.preventDefault();
+//     if (e.target.nodeName !== 'IMG') {
+//         return;
+//     } else {
+//         const instance = basicLightbox.create(`
+//     <img src="${imageSource}" width="800" height="600">
+// `)
+//         instance.show();
+
+//         }
 }
