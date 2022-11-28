@@ -53,16 +53,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
 
 
 
-// function onGalleryContainerClick(e) {
-//     const imageSource = e.target.dataset.source;
-//     e.preventDefault();
-//     if (e.target.nodeName !== 'IMG') {
-//         return;
-//     } else {
-//         const instance = basicLightbox.create(`
-//     <img src="${imageSource}" width="800" height="600">
-// `)
-//         instance.show();
-
-//         }
-// }
