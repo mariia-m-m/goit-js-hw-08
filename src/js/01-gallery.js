@@ -7,9 +7,6 @@ const basicLightbox = require('basiclightbox')
 import * as basicLightbox from 'basiclightbox'
 // Change code below this line
 
-console.log(galleryItems);
-
-// Change code below this line
 const galleryConteiner = document.querySelector('div.gallery');
 const items = createGallery(galleryItems);
 
