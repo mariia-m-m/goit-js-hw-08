@@ -32,6 +32,15 @@ function createGallery(galleryItems) {
 galleryConteiner.insertAdjacentHTML('beforeend', items)
 
 // №2
+galleryConteiner.addEventListener('click', onGalleryContainerClick)
+function onGalleryContainerClick(e) {
+  const imageSource = e.target.dataset.source;
+  e.preventDefault();
+  const Image = document.querySelector('gallery__image');
+  if (!Image) {
+   return 
+  }
+}
 
 const renderGalleryToHTML = array => {
   galleryConteiner.insertAdjacentHTML(`beforeend`, createItemGallery(array));
@@ -42,7 +51,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-// galleryConteiner.addEventListener('click', onGalleryContainerClick)
+
 
 // function onGalleryContainerClick(e) {
 //     const imageSource = e.target.dataset.source;
