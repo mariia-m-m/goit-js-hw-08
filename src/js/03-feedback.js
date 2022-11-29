@@ -28,11 +28,16 @@ function onFormSubmit(evt){
 function populateForm() {
         const stringData = localStorage.getItem(STORAGE_KEY);
         const parsedData = JSON.parse(stringData);
-        if (stringData) {
+        if (parsedData.message) {
             refs.textarea.value = parsedData.message;
+            refs.input.value = ``;
+            console.log(parsedData)
+    } 
+          if (parsedData.email) {
+            refs.textarea.value = ``;
             refs.input.value = parsedData.email;
             console.log(parsedData)
-        } 
+    } 
     }
 populateForm();
 
