@@ -29,13 +29,14 @@ function onFormSubmit(evt){
 
 const setFormDataToForm = form => {
     const stringData = localStorage.getItem(STORAGE_KEY);
-    const formData = JSON.parse(stringData);
-  if (!formData) {
+    const parsedData = JSON.parse(stringData);
+  if (!parsedData) {
     return;
   }
     
-  for (const key in formData) {
-    form.elements[key].value = formData[key];
+  for (const key in parsedData) {
+    form.elements[key].value = parsedData[key];
   }
 };
     setFormDataToForm(form);
+
