@@ -23,9 +23,14 @@ form.addEventListener('input', throttle(e => {
 
 
 function onFormSubmit(evt) {
+   
   if (refs.textarea.value && refs.input.value) {
+      evt.preventDefault();
     evt.currentTarget.reset();
-    localStorage.removeItem(STORAGE_KEY)
+    // localStorage.removeItem(STORAGE_KEY)- щоб очистити форму при сабміті
+    const stringData = localStorage.getItem(STORAGE_KEY);
+    const parsedData = JSON.parse(stringData);
+    console.log(parsedData)
   } else {
     evt.preventDefault();
     alert('друг, заполни плиз все поля');
