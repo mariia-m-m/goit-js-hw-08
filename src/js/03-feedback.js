@@ -11,18 +11,25 @@ const formData = {};
 
 
 form.addEventListener('submit', onFormSubmit)
-form.addEventListener('input', throttle(e =>{
-    formData[e.target.name] = e.target.value;
+form.addEventListener('input', throttle(e => {
+  const formData = {
+    email: form.elements.email.value,
+    message: form.elements.message.value
+  }
     // console.log(formData);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
 },500)
 )
 
 
-function onFormSubmit(evt){
-    evt.preventDefault();
+function onFormSubmit(evt) {
+  if (refs.textarea.value&&refs.input.value) {
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY)
+  } else {
+    evt.preventDefault();
+    alert('друг, заполни плиз все поля');
+  }
 }
 
 
