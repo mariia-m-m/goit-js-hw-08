@@ -23,7 +23,7 @@ form.addEventListener('input', throttle(e => {
 
 
 function onFormSubmit(evt) {
-  if (refs.textarea.value&&refs.input.value) {
+  if (refs.textarea.value && refs.input.value) {
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY)
   } else {
